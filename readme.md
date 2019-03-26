@@ -12,7 +12,7 @@ The app has a MainViewModel with 3 sub-viewmodels on it:
 - TasksViewModel (I could have also called it SublistsViewModel)
 - DetailsViewModel
 
-![parts](https://github.com/madeinouweland/electron-navigator/blob/master/all.jpg){:width="400px"}
+![parts](https://github.com/madeinouweland/electron-navigator/blob/master/all.jpg?s=400}
 
 When the MainView(.html) is loaded, it creates a Navigator, Fake database and the MainViewModel:
 
