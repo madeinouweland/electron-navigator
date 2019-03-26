@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Lemon and Peppers</title>
     <link rel="stylesheet" href="./screen.css">
   </head>
   <body>
-    <h1 id="title">Hello World!</h1>
+    <h1 id="title"></h1>
     <ul id="lists"></ul>
     <ul id="tasks"></ul>
     <div id="details">details</div>
@@ -15,18 +15,19 @@
         ul.innerHTML = "";
         items.forEach(x => {
           let li = document.createElement("li");
-          li.innerHTML = x;
+          li.innerHTML = `${x.name} (${x.id})`;
+          li.dataset.id = x.id;
           ul.appendChild(li);
         });
       }
 
       const { Navigator } = require('./navigator.js')
-      const { Data } = require('./data.js')
+      const { Database } = require('./database.js')
       const { MainViewModel } = require('./mainviewmodel.js')
 
-      let data = new Data();
+      let database = new Database();
       let nav = new Navigator();
-      let mainViewModel = new MainViewModel(document, nav, data);
+      let mainViewModel = new MainViewModel(document, nav, database);
 
     </script>
   </body>

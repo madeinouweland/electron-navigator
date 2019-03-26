@@ -16,7 +16,7 @@ The app has a MainViewModel with 3 sub-viewmodels on it:
 
 When the MainView(.html) is loaded, it creates a Navigator, Fake database and the MainViewModel:
 
-![parts](https://github.com/madeinouweland/electron-navigator/blob/master/mainview.jpg)
+<img src="https://github.com/madeinouweland/electron-navigator/blob/master/mainview.jpg" width="400"/>
 
 The MainViewModel takes the HTML document in the constructor so it can change the DOM depending on the data in the viewmodels. The Navigator has navigation functions that emit change-events. The MainViewModel subscribes to these events.
 
@@ -25,9 +25,9 @@ The MainViewModel takes the HTML document in the constructor so it can change th
 | selectedlistchanged | create new TasksViewModel, load tasks for this list, de-select task |
 | selectedtaskchanged | create new DetailsViewModel, select task |
 
-![parts](https://github.com/madeinouweland/electron-navigator/blob/master/nav.jpg)
+<img src="https://github.com/madeinouweland/electron-navigator/blob/master/nav.jpg" width="400"/>
 
-## How to use?
+## How can you try it out?
 
 - clone the project
 - cd into `src` folder

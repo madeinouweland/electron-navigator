@@ -1,7 +1,7 @@
 class DetailsViewModel {
-  constructor(container, navigator, data, taskId) {
+  constructor(container, navigator, database, taskId) {
     this.navigator = navigator;
-    container.innerHTML = taskId;
+    container.innerHTML = database.getTask(taskId).name;
   }
 }
 

@@ -1,15 +1,12 @@
 class ListsViewModel {
-  constructor(doc, navigator, data) {
+  constructor(listview, navigator, database) {
     this.navigator = navigator;
-
-    this.ul = doc.getElementById("lists");
-    this.ul.onclick = e => this.onItemClicked(e.target);
-
-    populateList(this.ul, data.getLists());
+    listview.onclick = e => this.onItemClicked(e.target);
+    populateList(listview, database.getLists());
   }
 
   onItemClicked(element) {
-    this.navigator.navigateToList(element.innerHTML);
+    this.navigator.navigateToList(element.dataset.id);
   }
 }
 

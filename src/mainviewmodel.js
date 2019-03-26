@@ -4,23 +4,24 @@ const { DetailsViewModel } = require('./detailsviewmodel.js');
 
 class MainViewModel {
   constructor(doc, nav, data) {
-    this.doc = doc;
-    this.detailcontainer = this.doc.getElementById("details");
-    this.taskslistview = this.doc.getElementById("tasks");
+    this.titlecontainer = doc.getElementById("title");
+    const listslistview = doc.getElementById("lists");
+    this.taskslistview = doc.getElementById("tasks");
+    this.detailcontainer = doc.getElementById("details");
     this.nav = nav;
     this.data = data;
-    this.listsViewModel = new ListsViewModel(doc, nav, data);
+    this.listsViewModel = new ListsViewModel(listslistview, nav, data);
     this.onSelectedListChanged = this.onSelectedListChanged.bind(this);
     this.onSelectedTaskChanged = this.onSelectedTaskChanged.bind(this);
     nav.on("selectedlistchanged", this.onSelectedListChanged);
     nav.on("selectedtaskchanged", this.onSelectedTaskChanged);
 
     // select first list
-    this.nav.navigateToList(this.data.getLists()[0]);
+    this.nav.navigateToList(1);
   }
 
   onSelectedListChanged(id) {
-    this.doc.getElementById("title").innerHTML = this.nav.displayInfo;
+    this.titlecontainer.innerHTML = this.nav.displayInfo;
     this.tasksViewModel = new TasksViewModel(this.taskslistview, this.nav, this.data, id);
 
     // list has changed, deselect task
@@ -28,7 +29,7 @@ class MainViewModel {
   }
 
   onSelectedTaskChanged(id) {
-    this.doc.getElementById("title").innerHTML = this.nav.displayInfo;
+    this.titlecontainer.innerHTML = this.nav.displayInfo;
     if (id === null) {
       this.detailcontainer.style.visibility = 'hidden';
       this.detailsViewModel = null;
