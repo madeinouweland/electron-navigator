@@ -1,9 +1,7 @@
 class DetailsViewModel {
-  constructor(doc, navigator, data, taskId) {
+  constructor(container, navigator, data, taskId) {
     this.navigator = navigator;
-
-    this.div = doc.getElementById("taskdetails");
-    this.div.innerHTML = taskId;
+    container.innerHTML = taskId;
   }
 }
 

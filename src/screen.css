@@ -1,0 +1,26 @@
+html, body {
+  margin: 20px;
+  height: 100%;
+}
+
+body {
+  font: caption;
+}
+
+li div {
+  cursor: default;
+}
+
+ul, div {
+  margin: 2px;
+  padding: 0px;
+  float: left;
+  width: 100px;
+  list-style: none;
+}
+
+li {
+  background-color: #ddd;
+  margin: 2px;
+  padding: 4px;
+}

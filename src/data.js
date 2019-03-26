@@ -1,7 +1,7 @@
 class Data {
   constructor() {
     this.lists = {
-      "movies" : ["godfather", "casino", "the hard way"],
+      "movies" : ["godfather", "pulp fiction", "toy story", "casino", "the hard way"],
       "groceries" : ["apples", "paprika", "lemon", "pepprs", "bread", "soup"],
       "music" : ["the police", "the beatles", "mike oldfield", "mark knopfler"],
     }

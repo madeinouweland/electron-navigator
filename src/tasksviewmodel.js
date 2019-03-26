@@ -1,11 +1,8 @@
 class TasksViewModel {
-  constructor(doc, navigator, data, listId) {
+  constructor(listview, navigator, data, listId) {
     this.navigator = navigator;
-
-    this.ul = doc.getElementById("tasks");
-    this.ul.onclick = e => this.onItemClicked(e.target);
-
-    populateList(this.ul, data.getTasks(listId));
+    listview.onclick = e => this.onItemClicked(e.target);
+    populateList(listview, data.getTasks(listId));
   }
 
   onItemClicked(element) {

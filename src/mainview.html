@@ -3,32 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-    <style>
-      li div {
-        cursor: default;
-      }
-
-      ul, div {
-        margin: 2px;
-        border: 1px solid #ccc;
-        padding: 2px;
-        float: left;
-        width: 100px;
-        list-style: none;
-      }
-
-      li {
-        background-color: #ddd;
-        margin: 2px;
-        padding: 2px;
-      }
-    </style>
+    <link rel="stylesheet" href="./screen.css">
   </head>
   <body>
     <h1 id="title">Hello World!</h1>
     <ul id="lists"></ul>
     <ul id="tasks"></ul>
-    <div id="taskdetails">details</div>
+    <div id="details">details</div>
     <script type="text/javascript">
       function populateList(ul, items) {
         ul.innerHTML = "";
