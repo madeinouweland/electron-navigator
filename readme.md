@@ -1,6 +1,6 @@
 # electron-navigator
 
-This example shows you how to create a navigator in an electron app.
+This example shows you a way to navigate in a single page electron app. The app is divided in HTML areas that connect to a viewmodel. These viewmodels are created and re-created based on the navigator state.  
 
 ### It does:
 
