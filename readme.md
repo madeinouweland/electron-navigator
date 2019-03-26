@@ -1,6 +1,6 @@
 # electron-navigator
 
-This example shows you how to create a navigator that creates viewmodels depending on the navigation state.
+This example shows you how to create a navigator in an electron app. Viewmodels are (re)created depending on the navigation state.
 
 ![navigate](https://github.com/madeinouweland/electron-navigator/blob/master/wl.gif)
 
@@ -12,7 +12,7 @@ The app has a MainViewModel with 3 sub-viewmodels on it:
 - TasksViewModel (I could have also called it SublistsViewModel)
 - DetailsViewModel
 
-![parts](https://github.com/madeinouweland/electron-navigator/blob/master/all.jpg)
+![parts](https://github.com/madeinouweland/electron-navigator/blob/master/all.jpg){:width="400px"}
 
 When the MainView(.html) is loaded, it creates a Navigator, Fake database and the MainViewModel:
 
