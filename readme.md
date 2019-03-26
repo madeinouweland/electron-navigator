@@ -1,6 +1,20 @@
 # electron-navigator
 
-This example shows you how to create a navigator in an electron app. Viewmodels are (re)created depending on the navigation state.
+This example shows you how to create a navigator in an electron app.
+
+### It does:
+
+- create a MainViewModel that binds the DOM to child viewmodels
+- create a Navigator that has navigation functions and emits events
+- create or re-recreate Viewmodels when navigation events occur
+
+### It does not:
+
+- serialize the navigation state to a string when navigating
+- take a startup URI like `electron-navigator/list/1/task3`
+- contain routing where the URI above could be parsed to a navigation state
+
+**serializing and deserializing state is necessary when an app is suspended and resumed by the operating system without restoring state for you. To my knowledge this does not happen with electron apps**
 
 ![navigate](https://github.com/madeinouweland/electron-navigator/blob/master/wl.gif)
 
