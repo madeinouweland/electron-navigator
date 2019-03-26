@@ -23,6 +23,10 @@ class MainViewModel {
   }
 
   onSelectedListChanged(id) {
+    // MEMORY LEAK WARNING: if a previous tasksViewModel exists and contains event handlers
+    // or other references, they should be disposed before creating a new tasksViewModel.
+    // In this example, tasksViewModel has no references except click event handlers on the 
+    // list items, which will be destroyed when we set innerHTML = "" in the populateList function.
     this.tasksViewModel = new TasksViewModel(this.taskslistview, this.nav, this.data, id);
 
     // list has changed, deselect task
@@ -30,6 +34,9 @@ class MainViewModel {
   }
 
   onSelectedTaskChanged(id) {
+    // MEMORY LEAK WARNING: if a previous detailsViewModel exists and contains event handlers
+    // or other references, they should be disposed before creating a new detailsViewModel.
+    // In this example, detailsViewModel has no references.
     if (id === null) {
       this.detailcontainer.style.visibility = 'hidden';
       this.detailsViewModel = null;
