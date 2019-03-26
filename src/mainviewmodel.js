@@ -11,17 +11,18 @@ class MainViewModel {
     this.nav = nav;
     this.data = data;
     this.listsViewModel = new ListsViewModel(listslistview, nav, data);
+    this.onNavigated = this.onNavigated.bind(this);
     this.onSelectedListChanged = this.onSelectedListChanged.bind(this);
     this.onSelectedTaskChanged = this.onSelectedTaskChanged.bind(this);
     nav.on("selectedlistchanged", this.onSelectedListChanged);
     nav.on("selectedtaskchanged", this.onSelectedTaskChanged);
+    nav.on("navigated", this.onNavigated);
 
     // select first list
     this.nav.navigateToList(1);
   }
 
   onSelectedListChanged(id) {
-    this.titlecontainer.innerHTML = this.nav.displayInfo;
     this.tasksViewModel = new TasksViewModel(this.taskslistview, this.nav, this.data, id);
 
     // list has changed, deselect task
@@ -29,7 +30,6 @@ class MainViewModel {
   }
 
   onSelectedTaskChanged(id) {
-    this.titlecontainer.innerHTML = this.nav.displayInfo;
     if (id === null) {
       this.detailcontainer.style.visibility = 'hidden';
       this.detailsViewModel = null;
@@ -37,6 +37,10 @@ class MainViewModel {
       this.detailsViewModel = new DetailsViewModel(this.detailcontainer, this.nav, this.data, id);
       this.detailcontainer.style.visibility = 'visible';
     }
+  }
+
+  onNavigated() {
+    this.titlecontainer.innerHTML = this.nav.displayInfo;
   }
 
   dispose() {
